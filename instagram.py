@@ -1,7 +1,6 @@
 #import openai
 #import tkinter as tk
 from instagrapi import Client
-#from instagrapi import DirectMixin
 
 #openai.my_api_key = 'org-tIGaYoDJjUPeawEvfqE0QUmD'
 
