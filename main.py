@@ -1,25 +1,26 @@
 import openai
+import tkinter as tk
 from instagrapi import Client
 
-# openai.my_api_key = 'org-tIGaYoDJjUPeawEvfqE0QUmD'
+openai.my_api_key = 'org-tIGaYoDJjUPeawEvfqE0QUmD'
 
-username = input("enter username: ")
-password = input("enter password: ")
+#username = input("enter username: ")
+#password = input("enter password: ")
 
-while True:
-    relogin = input("would you like to save login (1 for yes, 0 for no): ")
-    relogin = int(relogin)
-    if (relogin >= 0) and (relogin <= 1):
-        break
-    else:
-        print("invalid response, please try again")
+username = "hoebottest"
+password = "Homie-144"
 
 cl = Client()
 cl.login(username, password)
 
-message = input("Please enter message: ")
-recipient = input("Please enter recipient usernaeme: ")
+message = input("please enter message: ")
 
-recipid = cl.user_id_from_username(recipient)
+numRecipients = input("how many recipients would you like to message: ")
+
+list = []
+for i in range(int(numRecipients)):
+    recipient = input("Please enter recipient username: ")
+    list.append(cl.user_id_from_username(recipient))
  
-cl.direct_send(message, recipid)
+cl.direct_send(message, list)
+
