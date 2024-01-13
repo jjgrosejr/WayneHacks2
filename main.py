@@ -1,4 +1,7 @@
+import openai
 from instagrapi import Client
+
+# openai.my_api_key = 'org-tIGaYoDJjUPeawEvfqE0QUmD'
 
 username = input("enter username: ")
 password = input("enter password: ")
@@ -14,3 +17,9 @@ while True:
 cl = Client()
 cl.login(username, password)
 
+message = input("Please enter message: ")
+recipient = input("Please enter recipient usernaeme: ")
+
+recipid = cl.user_id_from_username(recipient)
+ 
+cl.direct_send(message, recipid)
