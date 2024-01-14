@@ -21,5 +21,6 @@ for i in range(int(numRecipients)):
     recipient = input("please enter recipient username: ")
     list.append(cl.user_id_from_username(recipient))
 
-cl.direct_send(message, list)
+thread_id = cl.direct_send(message, list).thread_id # thread id for this mmessage
 
+print(cl.direct_messages(thread_id, 20)[0].text)
