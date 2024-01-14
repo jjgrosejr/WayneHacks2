@@ -2,6 +2,7 @@
 #Must be ran in replit unless you want to go through the pain of getting the discord.py library on VS code
 import discord
 from discord.ext import commands
+import random
 from noncommandfunctions import superrandint
 import time
 #all pre-connection code
@@ -26,6 +27,17 @@ async def spam(ctx, numberofmessages, message):
     for i in range(int(numberofmessages)):
         await ctx.send(message)
 
+@bot.command()
+async def roulette(ctx):
+    random.choice(ctx.guild.members)
+
+@bot.command()
+async def feed(ctx, string):
+    ctx.send("fed FakeFriend " + string)
+
+@bot.command()
+async def play(ctx):
+        ctx.send("played with FakeFriend, I'm happy now :)")
 
 #For command errors
 @bot.event
