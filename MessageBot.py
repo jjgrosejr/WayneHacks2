@@ -34,7 +34,9 @@ cl = Client()
 
 cl.login(username, password)
 
-recipient = [cl.user_id_from_username(input("enter recipient: "))]
+list = []
+recipient = input("enter recipient username: ")
+list.append(cl.user_id_from_username(recipient))
 
 thread_id = cl.direct_send("hello", recipient).thread_id
 
