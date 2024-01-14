@@ -9,3 +9,5 @@ Learning: oh god i love ai
 
 Username: hoebottest
 Password: Homie-144
+
+openai api key: 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
