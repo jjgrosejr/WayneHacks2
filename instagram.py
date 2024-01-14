@@ -1,8 +1,5 @@
-#import openai
 #import tkinter as tk
 from instagrapi import Client
-
-#openai.my_api_key = 'org-tIGaYoDJjUPeawEvfqE0QUmD'
 
 #username = input("enter username: ")
 #password = input("enter password: ")
@@ -24,4 +21,3 @@ for i in range(int(numRecipients)):
     list.append(cl.user_id_from_username(recipient))
 
 cl.direct_send(message, list)
-
